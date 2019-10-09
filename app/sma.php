@@ -2,6 +2,19 @@
 <html>
 <body>
 <h1>Sample page</h1>
+  
+  <SCRIPT LANGUAGE=Javascript>
+	str = document.location.href;
+	if (str.indexOf("http://") == 0){
+		//應該所有的網頁都會有 , 就算不keyin..browser 會自動補上
+		x = str.indexOf("/", 7);
+		// 略過 "http:// , 然後抓到第一郭 '/' 為止 , 這樣就應該是 IP 了 , 至少是 FULL DNS NAME
+		if (x == -1) x = str.length;
+		Server_IP = str.substring(7,x);
+		document.write ("Server ip = " + Server_IP + "<BR>");
+	}
+</Script>
+  
 <meta charset="UTF-8">
 <?php
 
